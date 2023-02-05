@@ -6,6 +6,8 @@ var velocity = Vector2()
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 
+var muelto = false
+
 func _physics_process(delta):
 	velocity = Vector2()
 	
@@ -28,9 +30,16 @@ func _physics_process(delta):
 			velocity.x += speed
 			
 		animationPlayer.play("Walk")	
-		
+	elif Input.is_action_pressed("ui_accept"):
+		animationPlayer.play("Attack")	
 	else: 
 		animationPlayer.play("idle")
 		
-	
 	move_and_slide(velocity)
+	
+	
+
+func _on_Area2D_body_entered(body):
+	body.get_name() == 'Golem'
+	muelto = true
+	pass # Replace with function body.

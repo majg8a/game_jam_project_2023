@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/0666d94a-c869-41a1-aa50-19514501a14e.png-ec5be97ba22c6a1da53f3f1e7e458006.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/Golem/0666d94a-c869-41a1-aa50-19514501a14e.png"
+dest_files=[ "res://.import/0666d94a-c869-41a1-aa50-19514501a14e.png-ec5be97ba22c6a1da53f3f1e7e458006.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

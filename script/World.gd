@@ -9,10 +9,15 @@ var currentEnemyCount = 1
 const radiusVector =  Vector2(64, 64)
 onready var enemy_1 = preload("res://Scenes/enemy.tscn")
 
+
+func _physics_process(delta):
+	if player.muelto == true:
+		print('has muelto')
+		pass
+
 func _ready():
 	generate_level()
 	generate_enemies()
-	
 	
 func generate_level():
 	var walker = Walker.new(Vector2.ZERO)
@@ -28,8 +33,6 @@ func generate_level():
 	
 	tileMap.update()
 	
-	
-
 func _on_Enemy_timer_timeout():
 	generate_enemies()
 		
