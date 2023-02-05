@@ -60,18 +60,13 @@ show_collision = true
 format = 1
 script = ExtResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 32, 32 )
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, 16 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -29, -29 )
+[node name="Camera2D" type="Camera2D" parent="player"]
 current = true
-zoom = Vector2( 0.5, 0.5 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-offset_h = 0.5
-offset_v = 0.5
-drag_margin_left = 0.1
-drag_margin_right = 0.1
-editor_draw_drag_margin = true
+
+[node name="Enemy_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Enemy_timer" to="." method="_on_Enemy_timer_timeout"]

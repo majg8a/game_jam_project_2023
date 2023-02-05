@@ -26,9 +26,6 @@ margin_left = 413.0
 margin_top = 527.0
 margin_right = 601.0
 margin_bottom = 573.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 margin_right = 188.0
