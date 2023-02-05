@@ -11,8 +11,7 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-#	get_tree().change_scene()
-	pass
+	get_tree().change_scene("res://Scenes/world.tscn")
 
 
 func _on_QuitButton_pressed():
