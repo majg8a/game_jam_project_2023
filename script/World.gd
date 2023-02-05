@@ -9,12 +9,6 @@ var currentEnemyCount = 1
 const radiusVector =  Vector2(64, 64)
 onready var enemy_1 = preload("res://Scenes/enemy.tscn")
 
-
-func _physics_process(delta):
-	if player.muelto == true:
-		print('has muelto')
-		pass
-
 func _ready():
 	generate_level()
 	generate_enemies()

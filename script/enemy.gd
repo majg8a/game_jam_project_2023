@@ -27,5 +27,6 @@ func setBorthers(newBrothers):
 
 
 func _on_Area2D_body_entered(body):
-	body.get_name() == 'Player'
-	pass # Replace with function body.
+	if body.get_name() == 'Attack':
+		self.visible
+	

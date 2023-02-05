@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Golem/0666d94a-c869-41a1-aa50-19514501a14e.png" type="Texture" id=1]
 [ext_resource path="res://script/enemy.gd" type="Script" id=2]
@@ -38,6 +38,9 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 21, 21 )
+
 [node name="Golem" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -54,3 +57,10 @@ hframes = 12
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GolemWalk = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -2,16 +2,16 @@ extends KinematicBody2D
 
 var speed = 200
 var velocity = Vector2()
-
+onready var attack = $Attack.get_child(0)
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 
 var muelto = false
 
 func _physics_process(delta):
+	if muelto:
+		return
 	velocity = Vector2()
-	
-	
 	if Input.is_action_pressed("down") or Input.is_action_pressed("up") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		if Input.is_action_pressed("down"):
 
@@ -31,15 +31,18 @@ func _physics_process(delta):
 			
 		animationPlayer.play("Walk")	
 	elif Input.is_action_pressed("ui_accept"):
-		animationPlayer.play("Attack")	
+		animationPlayer.play("Attack")
+		attack.disabled = false
+		
 	else: 
 		animationPlayer.play("idle")
-		
+		attack.disabled = true
 	move_and_slide(velocity)
 	
 	
 
 func _on_Area2D_body_entered(body):
-	body.get_name() == 'Golem'
-	muelto = true
-	pass # Replace with function body.
+#	if "Golem" in body.get_name():
+#		visible = false
+#		muelto = true
+	pass
