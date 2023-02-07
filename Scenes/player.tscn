@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/attacking/spritesheet (7).png" type="Texture" id=3]
@@ -73,8 +73,6 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=7]
-
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 53, 24 )
 script = ExtResource( 1 )
@@ -101,11 +99,7 @@ position = Vector2( 0, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 6 )
 
-[node name="Attack" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-position = Vector2( 9, 0 )
-shape = SubResource( 7 )
-disabled = true
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
